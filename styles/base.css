@@ -31,7 +31,7 @@ header {
 }
 
 nav {
-  display: flex;           /* Requirement: CSS Flex on nav */
+  display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 1.8rem;
@@ -45,16 +45,15 @@ nav a {
   padding: 0.6rem 1.2rem;
   border-radius: 6px;
   transition: all 0.3s ease;
-  background-color: rgba(255, 255, 255, 0.08);
 }
 
 nav a:hover,
 nav a:focus {
-  background-color: #0059b3;          /* Solid darker blue – good WCAG AA contrast with white text */
+  background-color: #0059b3;          /* Solid darker blue accent – ~10:1 contrast with white */
   color: white;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  text-decoration: underline;         /* Extra visual cue */
+  text-decoration: underline;         /* Strong visual cue */
 }
 
 /* Main – limited width & centered */
