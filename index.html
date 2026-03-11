@@ -3,9 +3,92 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WDD 131</title>
+  <title>WDD 131 – Dynamic Web Fundamentals – Olivia Crawford</title>
+  <meta name="description" content="WDD 131 – Dynamic Web Fundamentals course homepage by Olivia Crawford. Personal introduction, web development resources, and project showcase for BYU-Idaho.">
+  <meta name="author" content="Olivia Crawford">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <h1>WDD 131 - Crawford</h1>
+
+  <header>
+    <h1><span id="course-title">WDD 131 – Dynamic Web Fundamentals</span></h1>
+    <nav>
+      <a href="https://www.linkedin.com/">LinkedIn</a>
+      <a href="https://byupw.instructure.com/">Canvas (I-Learn)</a>
+      <a href="https://www.churchofjesuschrist.org/study/scriptures/nt/james/1?lang=eng&id=p5#p5">Scripture</a>
+      <a href="project/">Final Project</a> <!-- placeholder – change later -->
+    </nav>
+  </header>
+
+ <main>
+    <h1>Olivia Crawford</h1>
+
+    <div class="card-grid">
+
+      <section class="card">
+        <h2>About Me</h2>
+        <p>
+          Hello! My name is Olivia Crawford and I live in Hawaii.  
+          I'm currently taking WDD 131 to learn dynamic web development skills.  
+          I enjoy playing tennis, going swimming, family, travel, learning tech, and more.  
+          Looking forward to building more web projects!
+        </p>
+        <figure>
+          <img src="images/profile.jpg" alt="Photo of Olivia Crawford smiling">
+          <figcaption>Olivia Crawford</figcaption>
+        </figure>
+      </section>
+
+      <section class="card">
+        <h2>Web Dev Resources</h2>
+        <ul>
+          <li><a href="https://developer.mozilla.org/">MDN Web Docs</a></li>
+          <li><a href="https://css-tricks.com/">CSS-Tricks</a></li>
+          <li><a href="https://www.smashingmagazine.com/">Smashing Magazine</a></li>
+          <li><a href="https://www.w3schools.com/">W3Schools</a></li>
+          <li><a href="https://www.udemy.com/">Udemy</a></li>
+        </ul>
+
+        <h3>Hawaii – The Aloha State</h3>
+
+        <figure>
+          <img src="images/flag_of_hawaii.png" alt="Official Flag of Hawaii">
+          <figcaption>Official Flag of Hawaii</figcaption>
+        </figure>
+
+        <p>
+          Hawaii is the 50th state of the United States and the only state made entirely of islands. 
+          Its flag features eight horizontal stripes (white, red, blue) representing the eight main islands, 
+          with the Union Jack in the corner — a nod to historical British friendship with the Hawaiian Kingdom.
+        </p>
+        <p>
+          Due to its extreme isolation in the Pacific, Hawaii has one of the highest rates of endemic species in the world: 
+          over 90% of its native **terrestrial** plants and animals are found nowhere else on Earth.
+          Iconic examples include the nēnē (Hawaiian goose, the state bird), the Hawaiian monk seal, 
+          the ‘ōpe‘ape‘a (Hawaiian hoary bat — the only native land mammal), and vibrant forest birds like the ‘i‘iwi.
+        </p>
+        <p>
+          Best known for its volcanoes, stunning beaches, palm trees, aloha spirit, and unique biodiversity — 
+          from active lava flows to coral reefs teeming with life.
+        </p>
+      </section>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <p>
+      &copy; <span id="currentyear"></span> | Olivia Crawford | Hawaii
+    </p>
+    <p id="lastModified">Last Modification: </p>
+  </footer>
+
+  <script src="scripts/getdates.js"></script>
+
 </body>
 </html>
