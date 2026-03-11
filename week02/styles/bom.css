@@ -1,69 +1,81 @@
 * {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	font-family: Acme, Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Acme, Arial, sans-serif;
 }
 
 h1 {
-	font-size: 1.5rem;
+    font-size: 1.5rem;
 }
 
 main {
-	margin: 1rem auto;
-	border: 1px solid rgb(0 0 0 / 0.1);
-	padding: 1rem;
-	background-color: #ddd;
-	display: flex;
-	flex-direction: column;
+    margin: 1rem auto;
+    border: 1px solid rgb(0 0 0 / 0.1);
+    padding: 1rem;
+    background-color: #ddd;
+    display: flex;
+    flex-direction: column;
 }
 
 input,
 button {
-	padding: 0.5rem;
+    padding: 0.5rem;
 }
 
 button {
-	margin: 0.5rem;
+    margin: 0.5rem;
 }
 
 .delete {
-	width: fit-content;
+    width: fit-content;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
+    color: #c00;          /* red for delete */
+}
+
+.delete:hover {
+    color: #900;
+    background: #eee;
+    border-radius: 4px;
 }
 
 .input {
-	display: flex;
-	gap: 1rem;
+    display: flex;
+    gap: 1rem;
 }
 
 .list {
-	padding: 0.5rem;
+    padding: 0.5rem;
 }
 
 ul {
-	margin: 1rem;
-	list-style: none;
+    margin: 1rem;
+    list-style: none;
 }
 
 li {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 @media only screen and (min-width: 32.5em) {
-	h1 {
-		font-size: 2rem;
-	}
+    h1 {
+        font-size: 2rem;
+    }
 
-	main {
-		width: 320px;
-	}
+    main {
+        width: 320px;
+    }
 }
