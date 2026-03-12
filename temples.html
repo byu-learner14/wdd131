@@ -5,17 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Temple Album – A collection of beautiful temples from around the world.">
   <meta name="author" content="Olivia Crawford">
-  <title>Temple Album</title>
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
-  <!-- Mobile-first CSS first, then larger screens override -->
+  <!-- CSS – mobile first, then large -->
   <link rel="stylesheet" href="styles/temples.css">
   <link rel="stylesheet" href="styles/temples-large.css">
 
   <script defer src="scripts/temples.js"></script>
+
+  <title>Temple Album</title>
 </head>
 
 <body>
@@ -40,50 +42,97 @@
     <h1>My Favorite Temples</h1>
 
     <div class="gallery">
+
+      <!-- Example with srcset + sizes + dimensions + fetchpriority (LCP image) -->
       <figure>
-        <img src="images/laie_hawaii_temple_lds.webp" alt="Laie Hawaii Temple">
-        <figcaption>Laie Hawaii Temple</figcaption>
+        <img src="images/salt_lake_temple_lds-480w.webp"
+             srcset="images/salt_lake_temple_lds-480w.webp 480w,
+                     images/salt_lake_temple_lds-800w.webp 800w,
+                     images/salt_lake_temple_lds-1200w.webp 1200w"
+             sizes="(max-width: 600px) 100vw,
+                    (max-width: 900px) 50vw,
+                    424px"
+             alt="Salt Lake Temple"
+             width="1200"
+             height="1086"
+             loading="lazy"
+             fetchpriority="high">
+        <figcaption>Salt Lake Temple</figcaption>
       </figure>
 
+      <!-- Other images – add srcset when you create smaller versions -->
       <figure>
-        <img src="images/salt_lake_temple_lds.webp" alt="Salt Lake Temple">
-        <figcaption>Salt Lake Temple </figcaption>
-      </figure>
-
-      <figure>
-        <img src="images/logan_temple_lds.webp" alt="Logan Utah Temple">
+        <img src="images/logan_temple_lds.webp"
+             alt="Logan Utah Temple"
+             width="1280"
+             height="800"
+             loading="lazy">
         <figcaption>Logan Utah Temple</figcaption>
       </figure>
 
       <figure>
-        <img src="images/bountiful_temple_lds.webp" alt="Bountiful Utah Temple">
-        <figcaption>Bountiful Utah Temple</figcaption>
-      </figure>
-
-      <figure>
-        <img src="images/jordan_river_temple_lds.webp" alt="Jordan River Utah Temple">
-        <figcaption>Jordan River Utah Temple</figcaption>
-      </figure>
-
-      <figure>
-        <img src="images/arequipa_peru_temple_lds.webp" alt="Arequipa Peru Temple">
-        <figcaption>Arequipa Peru Temple</figcaption>
-      </figure>
-
-      <figure>
-        <img src="images/oakland_california_temple_lds.webp" alt="Oakland California Temple">
-        <figcaption>Oakland California Temple</figcaption>
-      </figure>
-
-      <figure>
-        <img src="images/san_diego_california_temple_lds.webp" alt="San Diego California Temple">
+        <img src="images/san_diego_california_temple_lds.webp"
+             alt="San Diego California Temple"
+             width="1280"
+             height="854"
+             loading="lazy">
         <figcaption>San Diego California Temple</figcaption>
       </figure>
 
       <figure>
-        <img src="images/los_angeles_temple_lds.webp" alt="Los Angeles California Temple">
+        <img src="images/oakland_california_temple_lds.webp"
+             alt="Oakland California Temple"
+             width="1280"
+             height="828"
+             loading="lazy">
+        <figcaption>Oakland California Temple</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/jordan_river_temple_lds.webp"
+             alt="Jordan River Utah Temple"
+             width="1280"
+             height="989"
+             loading="lazy">
+        <figcaption>Jordan River Utah Temple</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/laie_hawaii_temple_lds.webp"
+             alt="Laie Hawaii Temple"
+             width="1280"
+             height="800"
+             loading="lazy">
+        <figcaption>Laie Hawaii Temple</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/bountiful_temple_lds.webp"
+             alt="Bountiful Utah Temple"
+             width="1280"
+             height="800"
+             loading="lazy">
+        <figcaption>Bountiful Utah Temple</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/arequipa_peru_temple_lds.webp"
+             alt="Arequipa Peru Temple"
+             width="1280"
+             height="914"
+             loading="lazy">
+        <figcaption>Arequipa Peru Temple</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/los_angeles_temple_lds.webp"
+             alt="Los Angeles California Temple"
+             width="1280"
+             height="800"
+             loading="lazy">
         <figcaption>Los Angeles California Temple</figcaption>
       </figure>
+
     </div>
   </main>
 
