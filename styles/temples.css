@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+/* Header */
+header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 1rem;
+  position: relative; /* for absolute positioning of hamburger */
+  text-align: center;
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif; /* or your heading font */
+  margin-bottom: 0.5rem;
+}
+
+/* Hamburger button – visible on mobile */
+.hamburger {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2.2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  line-height: 1;
+}
+
+/* Nav menu – hidden by default on mobile */
+.nav-menu {
+  display: none; /* hidden until toggled */
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  padding: 0.8rem 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.nav-menu a:hover,
+.nav-menu a:focus {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* When menu is open (toggled by JS) */
+.nav-menu.active {
+  display: flex;
+}
+
+/* Main & gallery – 1 column on mobile */
+main {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;           /* 1 column mobile */
+  gap: 1.5rem;
+}
+
+figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+figcaption {
+  text-align: center;
+  margin-top: 0.8rem;
+  font-style: italic;
+  color: #555;
+}
+
+/* Footer – same as your home page */
+footer {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: auto;
+}
+
+footer p {
+  margin: 0.4rem 0;
+}

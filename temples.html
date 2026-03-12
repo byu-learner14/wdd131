@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Temple Album – A collection of beautiful temples from around the world.">
+  <meta name="author" content="Olivia Crawford">
+  <title>Temple Album</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Mobile-first CSS first, then larger screens override -->
+  <link rel="stylesheet" href="styles/temples.css">
+  <link rel="stylesheet" href="styles/temples-large.css">
+
+  <script defer src="scripts/temples.js"></script>
+</head>
+
+<body>
+
+  <header>
+    <h1>Temple Album</h1>
+
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      ☰
+    </button>
+
+    <nav class="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="#old">Old</a>
+      <a href="#new">New</a>
+      <a href="#large">Large</a>
+      <a href="#small">Small</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>My Favorite Temples</h1>
+
+    <div class="gallery">
+      <figure>
+        <img src="images/laie_hawaii_temple_lds.webp" alt="Laie Hawaii Temple">
+        <figcaption>Laie Hawaii Temple</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/salt_lake_temple_lds.webp" alt="Salt Lake Temple">
+        <figcaption>Salt Lake Temple </figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/logan_temple_lds.webp" alt="Logan Utah Temple">
+        <figcaption>Logan Utah Temple</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/bountiful_temple_lds.webp" alt="Bountiful Utah Temple">
+        <figcaption>Bountiful Utah Temple</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/jordan_river_temple_lds.webp" alt="Jordan River Utah Temple">
+        <figcaption>Jordan River Utah Temple</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/arequipa_peru_temple_lds.webp" alt="Arequipa Peru Temple">
+        <figcaption>Arequipa Peru Temple</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/oakland_california_temple_lds.webp" alt="Oakland California Temple">
+        <figcaption>Oakland California Temple</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/san_diego_california_temple_lds.webp" alt="San Diego California Temple">
+        <figcaption>San Diego California Temple</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/los_angeles_temple_lds.webp" alt="Los Angeles California Temple">
+        <figcaption>Los Angeles California Temple</figcaption>
+      </figure>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="currentyear"></span> | Olivia Crawford | Hawaii</p>
+    <p id="lastModified">Last Modification: </p>
+  </footer>
+
+</body>
+</html>

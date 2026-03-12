@@ -1,0 +1,64 @@
+@media (min-width: 768px) {
+
+  /* Hide hamburger button on desktop */
+  .hamburger {
+    display: none;
+  }
+
+  .nav-menu {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 0;
+  }
+
+  .nav-menu a {
+    padding: 0.8rem 1.4rem;
+    background-color: transparent;
+    font-size: 1.1rem;
+  }
+
+  .nav-menu a:hover,
+  .nav-menu a:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+  }
+
+  /* Gallery – switch to 2–3 columns */
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    /* 
+       auto-fit + minmax = responsive magic:
+       - tries to fit as many 320px min columns as possible
+       - grows them equally to fill space
+       - falls back to 1 column if too narrow
+    */
+    gap: 2rem;
+  }
+
+  /* Optional: make images look a bit nicer on larger screens */
+  figure img {
+    transition: transform 0.3s ease;
+  }
+
+  figure:hover img {
+    transform: scale(1.04);
+  }
+
+  /* Optional: wider main content area */
+  main {
+    padding: 0 2rem;
+    max-width: 1400px;
+  }
+
+  /* Optional: larger heading */
+  h1 {
+    font-size: 3rem;
+  }
+
+  /* Optional: footer tweaks if needed */
+  footer {
+    padding: 2rem;
+  }
+}
