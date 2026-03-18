@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Images - WDD131</title>
+  <link rel="stylesheet" href="styles/responsive-images.css">
+</head>
+<body>
+  <main>
+    <div class="hero">
+      <picture>
+        <!-- Largest image for wide screens (≥1000px) -->
+        <source srcset="images/hero-large.webp" media="(min-width: 1000px)">
+        
+        <!-- Medium image for medium screens (≥500px) -->
+        <source srcset="images/hero-medium.webp" media="(min-width: 500px)">
+        
+        <!-- Fallback small image (phones & default) -->
+        <img src="images/hero-small.webp" 
+             alt="Orem Utah Temple at sunset with beautiful gardens and mountains" 
+             width="1500" 
+             height="750">
+      </picture>
+    </div>
+  </main>
+</body>
+</html>

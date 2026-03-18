@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Hero container */
+.hero {
+  max-width: 100%;
+  margin: 2rem auto;
+  overflow: hidden; /* keeps everything clean */
+}
+
+/* Responsive image rule (required by the activity) */
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Optional nice touches (not required but makes it look professional) */
+.hero {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.hero picture {
+  background-color: #e0e0ff; /* Light blue – shows if image doesn't load */
+}
+
+body {
+  padding: 1rem;
+  text-align: center;
+}
+
+h1 {
+  margin: 1rem 0;
+}
