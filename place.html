@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hawaii – The Aloha State</title>
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>Hawaii</h1>
+    <p>The Aloha State • Islands of Paradise</p>
+  </header>
+
+  <main>
+    <!-- Hero with responsive WebP images -->
+    <picture class="hero">
+      <source media="(max-width: 600px)" srcset="images/hero-hawaii-mobile.webp">
+      <source media="(max-width: 1000px)" srcset="images/hero-hawaii-tablet.webp">
+      <img src="images/hero-hawaii-desktop.webp" 
+           alt="Stunning Hawaiian beach with turquoise water and volcanic mountains">
+    </picture>
+
+    <section class="intro">
+      <h2>About Hawaii</h2>
+      <p>Hawaii is a volcanic archipelago in the central Pacific Ocean. Known for its tropical climate, beautiful beaches, lush rainforests, and rich Polynesian culture, it’s a dream destination for millions every year.</p>
+      <ul>
+        <li>🏄‍♀️ World-famous surfing on Oahu’s North Shore</li>
+        <li>🌋 Active volcanoes on the Big Island</li>
+        <li>🐢 Snorkeling with sea turtles in crystal-clear waters</li>
+      </ul>
+    </section>
+
+    <section class="weather">
+      <h2>Weather</h2>
+      <!-- Mobile SVG icon (hidden on wide screens) -->
+      <img src="images/sunny.svg" alt="Sunny weather icon" class="weather-icon-mobile">
+
+      <p class="conditions">Currently: 72°F • Partly Cloudy • Wind: 8 mph</p>
+      <p>Wind Chill: <span id="windChill">calculating...</span></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="currentYear"></span> Olivia – WDD 131</p>
+    <p>Last modified: <span id="lastModified"></span></p>
+  </footer>
+
+  <script src="scripts/main.js" defer></script>
+</body>
+</html>

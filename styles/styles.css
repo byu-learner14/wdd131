@@ -1,0 +1,73 @@
+:root {
+  --primary: #006d77;     /* Ocean teal */
+  --accent:  #f4a261;     /* Golden sand */
+  --lava:    #e63946;     /* Lava red */
+  --text:    #222;
+  --light:   #f8f9fa;
+  --shadow:  0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: var(--text);
+  background: var(--light);
+  line-height: 1.6;
+}
+
+header {
+  background: linear-gradient(var(--primary), #003d44);
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.weather {
+  background: #e0f7fa;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.weather h2::after {
+  content: "⛅";
+  margin-left: 10px;
+  font-size: 1.6em;
+}
+
+.weather-icon-mobile {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1rem;
+}
+
+/* Responsive layout - matches typical wireframe */
+@media (min-width: 768px) {
+  main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+  }
+  .intro { grid-column: 1; }
+  .weather { grid-column: 2; }
+}
+
+/* Good usability & contrast */
+h1, h2 { color: var(--primary); }
+a { color: var(--lava); }
