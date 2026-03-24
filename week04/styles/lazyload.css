@@ -1,0 +1,65 @@
+/* Basic page styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: #0f0f0f;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: #1a1a1a;
+}
+
+h1 {
+    font-size: 2.8rem;
+}
+
+/* Center images in a single column */
+main {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+img {
+    display: block;           /* Centers the images */
+    margin: 60px auto;        /* Space between each image */
+    width: 400px;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+
+    /* Fade-from-black animation */
+    opacity: 0;
+    animation: fadeFromBlack 1.4s forwards;
+}
+
+/* Animation keyframes */
+@keyframes fadeFromBlack {
+    0% {
+        opacity: 0;
+        filter: brightness(0.25);   /* Starts very dark */
+    }
+    100% {
+        opacity: 1;
+        filter: brightness(1);      /* Ends at normal brightness */
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: #1a1a1a;
+    font-size: 0.95rem;
+    margin-top: 60px;
+}

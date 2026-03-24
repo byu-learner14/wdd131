@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lazy Loading Images</title>
+  <meta name="description" content="Demonstration of native lazy loading with fade-from-black animation">
+  <meta name="author" content="Olivia">
+  <link rel="stylesheet" href="styles/lazyload.css">
+</head>
+<body>
+  <header>
+    <h1>Lazy Loading Demo</h1>
+  </header>
+
+  <nav></nav>
+
+  <main>
+    <!-- Six portrait images (400px wide × 600px tall) -->
+    <img src="https://picsum.photos/id/1015/400/600" 
+         alt="Mountain landscape at sunset" 
+         width="400" 
+         height="600" 
+         loading="lazy">
+
+    <img src="https://picsum.photos/id/201/400/600" 
+         alt="Forest path in autumn" 
+         width="400" 
+         height="600" 
+         loading="lazy">
+
+    <img src="https://picsum.photos/id/251/400/600" 
+         alt="Ocean waves crashing on rocks" 
+         width="400" 
+         height="600" 
+         loading="lazy">
+
+    <img src="https://picsum.photos/id/301/400/600" 
+         alt="City street at night" 
+         width="400" 
+         height="600" 
+         loading="lazy">
+
+    <img src="https://picsum.photos/id/351/400/600" 
+         alt="Snowy mountain peak" 
+         width="400" 
+         height="600" 
+         loading="lazy">
+
+    <img src="https://picsum.photos/id/401/400/600" 
+         alt="Colorful hot air balloons" 
+         width="400" 
+         height="600" 
+         loading="lazy">
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Olivia - WDD 131</p>
+    <p>Last modified: <span id="lastModified"></span></p>
+  </footer>
+
+  <script src="scripts/lazyload.js"></script>
+</body>
+</html>
