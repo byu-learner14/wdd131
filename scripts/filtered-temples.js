@@ -61,7 +61,7 @@ const temples = [
     location: "Laie, Hawaii, United States",
     dedicated: "1919, November, 27",
     area: 42100,
-    imageUrl: "images/laie-hawaii-temple-lds.jpg"
+    imageUrl: "images/laie-temple-lds.jpg"
   },
   {
     templeName: "Colonia Juárez Chihuahua Mexico",
