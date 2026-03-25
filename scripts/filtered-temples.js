@@ -81,11 +81,12 @@ function createTempleCard(temple) {
   img.alt = `${temple.templeName} Temple`;
   img.width = 400;
   img.height = 250;
-  img.loading = "lazy";   // Native lazy loading
+  img.loading = "lazy";
+  // No need for extra style here - CSS handles it now
 
   const figcaption = document.createElement("figcaption");
   figcaption.innerHTML = `
-    <h2>${temple.templeName}</h2>
+    <h3>${temple.templeName}</h3>   <!-- Changed from h2 to h3 for better semantics -->
     <p><strong>Location:</strong> ${temple.location}</p>
     <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
     <p><strong>Area:</strong> ${temple.area.toLocaleString()} sq ft</p>
