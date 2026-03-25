@@ -111,3 +111,51 @@ footer {
 footer p {
   margin: 0.4rem 0;
 }
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+figure {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+figure:hover {
+  transform: translateY(-8px);
+}
+
+figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+figcaption {
+  padding: 1.2rem;
+  text-align: left;
+}
+
+figcaption h2 {
+  margin-bottom: 0.6rem;
+  color: #2c3e50;
+  font-family: 'Playfair Display', serif;
+}
+
+figcaption p {
+  margin: 0.4rem 0;
+  color: #555;
+}
+
+/* Active nav link */
+.nav-menu a.active {
+  background-color: rgba(255, 255, 255, 0.3);
+  font-weight: 500;
+}
