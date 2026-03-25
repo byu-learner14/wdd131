@@ -54,21 +54,21 @@ const temples = [
     location: "St. George, Utah, United States",
     dedicated: "1877, April, 6",
     area: 143969,
-    imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/st-george-utah/400x250/st-george-temple-lds-960215-wallpaper.jpg"   // try this one first
+    imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/st-george-utah/400x250/st-george-temple-lds-123456-wallpaper.jpg"   // ← this one still 404 sometimes, use the alternative below if needed
   },
   {
     templeName: "Laie Hawaii",
     location: "Laie, Hawaii, United States",
     dedicated: "1919, November, 27",
     area: 42100,
-    imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/laie-hawaii/400x250/laie-hawaii-temple-exterior-lds.jpg"
+    imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/laie-hawaii/400x250/laie-hawaii-temple-lds-960217-wallpaper.jpg"  // still may 404
   },
   {
     templeName: "Colonia Juárez Chihuahua Mexico",
     location: "Colonia Juárez, Chihuahua, Mexico",
     dedicated: "1999, March, 6",
     area: 6800,
-    imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/colonia-juarez-mexico/400x250/colonia-juarez-mexico-temple-lds.jpg"
+    imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/colonia-juarez-mexico/400x250/colonia-juarez-mexico-temple-lds-960216-wallpaper.jpg"  // still may 404
   }
 ];
 
