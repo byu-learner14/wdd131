@@ -10,7 +10,6 @@
 </head>
 
 <body>
-
   <header>
     <h1>Hawaii</h1>
     <p>The Aloha State • Islands of Paradise</p>
@@ -22,7 +21,8 @@
       <source media="(max-width: 600px)" srcset="images/hero-hawaii-mobile.webp">
       <source media="(max-width: 1000px)" srcset="images/hero-hawaii-tablet.webp">
       <img src="images/hero-hawaii-desktop.webp" 
-           alt="Stunning Hawaiian beach with turquoise water and volcanic mountains">
+           alt="Stunning Hawaiian beach with turquoise water and volcanic mountains"
+           loading="eager">
     </picture>
 
     <section class="intro">
@@ -37,7 +37,8 @@
 
     <section class="weather">
       <h2>Weather</h2>
-      <!-- Mobile SVG icon (hidden on wide screens) -->
+      
+      <!-- Mobile-only SVG -->
       <img src="images/sunny.svg" alt="Sunny weather icon" class="weather-icon-mobile">
 
       <p class="conditions">Currently: 72°F • Partly Cloudy • Wind: 8 mph</p>

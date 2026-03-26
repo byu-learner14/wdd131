@@ -5,6 +5,7 @@
   --text:    #222;
   --light:   #f8f9fa;
   --shadow:  0 6px 15px rgba(0, 0, 0, 0.15);
+  --white:   #ffffff;
 }
 
 body {
@@ -17,12 +18,27 @@ body {
 
 header {
   background: linear-gradient(var(--primary), #003d44);
-  color: white;
+  color: var(--white);
   text-align: center;
   padding: 3rem 1rem;
+  /* Stronger contrast for h1 */
 }
 
-.hero img {
+header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Helps with gradient contrast */
+}
+
+header p {
+  margin: 0;
+  font-size: 1.2rem;
+  opacity: 0.95;
+}
+
+.hero img,
+.hero picture {
   width: 100%;
   height: auto;
   display: block;
@@ -45,19 +61,19 @@ main {
   box-shadow: var(--shadow);
 }
 
-.weather h2::after {
-  content: "⛅";
-  margin-left: 10px;
-  font-size: 1.6em;
-}
-
+/* Mobile-only SVG icon */
 .weather-icon-mobile {
   width: 80px;
   height: 80px;
   margin: 0 auto 1rem;
+  display: block;
 }
 
-/* Responsive layout - matches typical wireframe */
+/* Desktop-only emoticon via pseudo-element */
+.weather h2 {
+  position: relative;
+}
+
 @media (min-width: 768px) {
   main {
     display: grid;
@@ -66,8 +82,30 @@ main {
   }
   .intro { grid-column: 1; }
   .weather { grid-column: 2; }
+
+  /* Hide SVG on desktop */
+  .weather-icon-mobile {
+    display: none;
+  }
+
+  /* Show emoticon only on desktop via pseudo-element */
+  .weather h2::after {
+    content: "⛅";
+    margin-left: 12px;
+    font-size: 1.8em;
+    vertical-align: middle;
+  }
 }
 
-/* Good usability & contrast */
-h1, h2 { color: var(--primary); }
-a { color: var(--lava); }
+/* Hide pseudo-element on mobile */
+@media (max-width: 767px) {
+  .weather h2::after {
+    content: none;
+  }
+}
+
+/* Typography & contrast */
+h1, h2 { 
+  color: var(--primary); 
+}
+h2 { margin-top: 0; }
