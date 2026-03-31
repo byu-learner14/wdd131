@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Acme, Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+main {
+    background-color: #ddd;
+    border: 1px solid rgb(0 0 0 / 0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 320px;
+}
+
+.input {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+input {
+    flex: 1;
+    padding: 0.6rem;
+    font-size: 1rem;
+    border: 1px solid #999;
+    border-radius: 4px;
+}
+
+button {
+    padding: 0.6rem 1rem;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #0055aa;
+}
+
+.delete {
+    width: fit-content;
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    padding: 0.1rem 0.4rem;
+    color: #c00;
+    margin-left: 1rem;
+}
+
+.delete:hover {
+    color: #900;
+    background: #eee;
+    border-radius: 4px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ccc;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+@media only screen and (min-width: 32.5em) {
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    main {
+        width: 340px;
+    }
+}
