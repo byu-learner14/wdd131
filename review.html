@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thank you for your product review - WDD 131">
+    <title>Review Submitted | WDD 131</title>
+    <link rel="stylesheet" href="styles/form.css">
+</head>
+<body>
+    <header>
+        <h1>Thank You!</h1>
+        <p>Your product review has been received.</p>
+    </header>
+
+    <main>
+        <div class="confirmation">
+            <h2>Review Confirmation</h2>
+            
+            <div id="review-summary" class="summary">
+                <!-- Summary will be populated by JavaScript if needed -->
+            </div>
+
+            <div class="counter">
+                <p>You have now submitted <strong id="review-count">0</strong> review(s)!</p>
+            </div>
+
+            <a href="form.html" class="submit-btn">Submit Another Review</a>
+        </div>
+    </main>
+
+    <!-- Common Footer -->
+    <footer>
+        <p>&copy; 2026 Olivia • WDD 131: Dynamic Web Fundamentals • Hawaii, US</p>
+        <p><a href="form.html">Back to Form</a></p>
+    </footer>
+
+    <script src="scripts/form.js"></script>
+    <script>
+        // Review counter using localStorage
+        document.addEventListener("DOMContentLoaded", () => {
+            // Get current count from localStorage or start at 0
+            let reviewCount = parseInt(localStorage.getItem("reviewCount")) || 0;
+            
+            // Increment the counter
+            reviewCount++;
+            
+            // Save the new count back to localStorage
+            localStorage.setItem("reviewCount", reviewCount);
+            
+            // Display the updated count
+            const countElement = document.getElementById("review-count");
+            if (countElement) {
+                countElement.textContent = reviewCount;
+            }
+
+            console.log(`✅ Review counter updated. Total reviews: ${reviewCount}`);
+        });
+    </script>
+</body>
+</html>
