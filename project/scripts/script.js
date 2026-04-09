@@ -1,6 +1,6 @@
 // script.js - WDD 131 Final Project
 
-// Array of trail objects
+// ==================== TRAIL DATA ====================
 const trails = [
     {
         name: "Kīlauea Iki Trail",
@@ -58,7 +58,7 @@ const trails = [
     }
 ];
 
-// Function to create HTML for one trail card
+// ==================== TRAIL CARD FUNCTION ====================
 function createTrailCard(trail) {
     return `
         <div class="trail-card">
@@ -73,7 +73,7 @@ function createTrailCard(trail) {
     `;
 }
 
-// Function to display trails (used on both home and trails page)
+// ==================== DISPLAY TRAILS ====================
 function displayTrails(filteredTrails) {
     const container = document.getElementById('featured-grid') || document.getElementById('trails-grid');
     if (!container) return;
@@ -86,7 +86,7 @@ function displayTrails(filteredTrails) {
     container.innerHTML = filteredTrails.map(trail => createTrailCard(trail)).join('');
 }
 
-// Filter trails by difficulty
+// ==================== FILTER FUNCTION ====================
 function filterTrails(difficulty) {
     if (difficulty === "all") {
         return trails;
@@ -94,16 +94,14 @@ function filterTrails(difficulty) {
     return trails.filter(trail => trail.difficulty === difficulty);
 }
 
-// Set up filter buttons (only runs on trails.html)
+// ==================== SETUP FILTER BUTTONS ====================
 function setupFilters() {
     const buttons = document.querySelectorAll('.filter-btn');
-    if (buttons.length === 0) return;   // Exit if no filter buttons (like on home page)
+    if (buttons.length === 0) return;
 
     buttons.forEach(button => {
         button.addEventListener('click', () => {
-            // Remove active class from all buttons
             buttons.forEach(btn => btn.classList.remove('active'));
-            // Add active class to clicked button
             button.classList.add('active');
 
             const filterValue = button.getAttribute('data-filter');
@@ -113,12 +111,110 @@ function setupFilters() {
     });
 }
 
-// Initialize everything when page loads
-document.addEventListener('DOMContentLoaded', () => {
-    // Show all trails by default on trails.html, or featured on home
-    const allTrails = trails;
-    displayTrails(allTrails);
+// ==================== PLAN YOUR HIKE FORM ====================
+function setupHikePlanner() {
+    const form = document.getElementById('hikeForm');
+    if (!form) return;
 
-    // Set up filters if they exist
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const trailName = document.getElementById('trail').value;
+        const hours = parseInt(document.getElementById('hours').value);
+        const groupSize = document.getElementById('group').value;
+
+        if (!trailName) {
+            alert("Please select a trail.");
+            return;
+        }
+
+        // Find the selected trail
+        const selectedTrail = trails.find(t => t.name === trailName);
+
+        // Simple estimated time calculation (based on length and difficulty)
+        let estimatedTime = hours;
+        if (selectedTrail.difficulty === "Hard") estimatedTime += 2;
+        if (selectedTrail.difficulty === "Moderate") estimatedTime += 1;
+
+        // Basic packing list
+        let packingList = [
+            "Water (at least 2 liters per person)",
+            "Snacks / lunch",
+            "Sunscreen & hat",
+            "Rain jacket",
+            "Hiking boots or sturdy shoes"
+        ];
+
+        if (selectedTrail.difficulty === "Hard") {
+            packingList.push("Headlamp or flashlight", "First aid kit", "Extra layers");
+        }
+        if (groupSize >= 3) {
+            packingList.push("Group whistle", "Extra water");
+        }
+
+        // Build the result HTML using template literals
+        const resultHTML = `
+            <h3>Your Hike Plan</h3>
+            <p><strong>Trail:</strong> ${trailName}</p>
+            <p><strong>Planned Hiking Time:</strong> ${estimatedTime} hours</p>
+            <p><strong>Group Size:</strong> ${groupSize === "1" ? "Solo" : groupSize + " people"}</p>
+            
+            <h4>Recommended Packing List:</h4>
+            <ul>
+                ${packingList.map(item => `<li>${item}</li>`).join('')}
+            </ul>
+            
+            <p><em>Always check current weather and trail conditions before hiking!</em></p>
+        `;
+
+        // Display the result
+        const resultDiv = document.getElementById('result');
+        resultDiv.innerHTML = resultHTML;
+
+        // Save to localStorage
+        const planData = {
+            trail: trailName,
+            hours: estimatedTime,
+            group: groupSize,
+            date: new Date().toLocaleDateString()
+        };
+        localStorage.setItem('lastHikePlan', JSON.stringify(planData));
+    });
+}
+
+// ==================== LOAD SAVED PLAN (optional bonus) ====================
+function loadSavedPlan() {
+    const savedPlan = localStorage.getItem('lastHikePlan');
+    if (savedPlan) {
+        const plan = JSON.parse(savedPlan);
+        console.log("Last saved plan:", plan);
+    }
+}
+
+// ==================== INITIALIZE EVERYTHING ====================
+document.addEventListener('DOMContentLoaded', () => {
+    // Display trails on home or trails page
+    displayTrails(trails);
+
+    // Setup filters if on trails page
     setupFilters();
+
+    // Setup the hike planner form if on plan.html
+    setupHikePlanner();
+
+    // Load any previously saved plan
+    loadSavedPlan();
 });
+
+// Safety Checklist on safety.html
+    const checkAllBtn = document.getElementById('checkAllBtn');
+    if (checkAllBtn) {
+        checkAllBtn.addEventListener('click', () => {
+            const checkboxes = document.querySelectorAll('.safety-item');
+            checkboxes.forEach(box => box.checked = true);
+            
+            const message = document.getElementById('checklistMessage');
+            message.textContent = "✅ All safety items checked! You're ready to hike safely!";
+            message.style.color = "green";
+        });
+    }
