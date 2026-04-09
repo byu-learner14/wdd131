@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trails | Hawaii Island Hiking Trails Guide</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <h1>Hawaiʻi Island Trails</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="trails.html" class="active">Trails</a></li>
+                    <li><a href="safety.html">Safety</a></li>
+                    <li><a href="plan.html">Plan Your Hike</a></li>
+                    <li><a href="references.html">References</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2>All Hiking Trails</h2>
+            
+            <!-- Filter Buttons -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Trails</button>
+                <button class="filter-btn" data-filter="Easy">Easy</button>
+                <button class="filter-btn" data-filter="Moderate">Moderate</button>
+                <button class="filter-btn" data-filter="Hard">Hard</button>
+            </div>
+
+            <!-- Trail Cards Grid -->
+            <div class="trails-grid" id="trails-grid">
+                <!-- JavaScript will fill this area -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Hawaii Island Hiking Trails Guide • <a href="references.html">References</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
