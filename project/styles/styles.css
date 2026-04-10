@@ -16,7 +16,7 @@ body {
     padding: 0;
 }
 
-/* ==================== SITE PLAN STYLES ==================== */
+/* Site Plan Styles */
 .section {
     background: white;
     padding: 2rem;
@@ -57,7 +57,7 @@ body {
     margin: 15px auto;
 }
 
-/* ==================== MAIN WEBSITE STYLES ==================== */
+/* Main Website Styles */
 header {
     background-color: var(--dark);
     color: white;
@@ -111,6 +111,11 @@ header {
     justify-content: center;
     text-align: center;
     color: white;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 1rem;
 }
 
 /* Buttons */

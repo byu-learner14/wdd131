@@ -9,7 +9,7 @@ const trails = [
         elevation: "400",
         region: "Volcanoes",
         description: "A fantastic loop through a volcanic crater with steaming vents and lush rainforest.",
-        image: "images/kīlauea-iki-trail.jpg"
+        image: "images/kilauea-iki.jpg"
     },
     {
         name: "Pololū Valley Trail",
@@ -18,7 +18,7 @@ const trails = [
         elevation: "420",
         region: "Kohala",
         description: "Steep trail down to a beautiful black sand beach with dramatic valley views.",
-        image: "images/pololū-valley-trail.jpg"
+        image: "images/pololu-valley.jpg"
     },
     {
         name: "Papakōlea Green Sand Beach",
@@ -27,7 +27,7 @@ const trails = [
         elevation: "300",
         region: "Kaū",
         description: "Unique hike to the only green sand beach in the United States.",
-        image: "images/papakōlea-green-sand-beach.jpg"
+        image: "images/green-sand-beach.jpg"
     },
     {
         name: "ʻAkaka Falls State Park",
@@ -36,7 +36,7 @@ const trails = [
         elevation: "100",
         region: "Hilo",
         description: "Short, paved loop trail with stunning views of two waterfalls.",
-        image: "images/'akaka-falls-state-park.jpg"
+        image: "images/akaka-falls.jpg"
     },
     {
         name: "Waipiʻo Valley Lookout Trail",
@@ -45,7 +45,7 @@ const trails = [
         elevation: "300",
         region: "Kohala",
         description: "Beautiful views into the sacred Waipiʻo Valley.",
-        image: "images/waipiʻo-valley-lookout-trail.jpg"
+        image: "images/waipio-valley.jpg"
     },
     {
         name: "Mauna Kea Summit Area",
@@ -54,7 +54,7 @@ const trails = [
         elevation: "2000",
         region: "Kohala",
         description: "Challenging high-altitude hike with incredible views.",
-        image: "images/mauna-kea-summit-trail.jpg"
+        image: "images/mauna-kea.jpg"
     }
 ];
 
@@ -128,15 +128,12 @@ function setupHikePlanner() {
             return;
         }
 
-        // Find the selected trail
         const selectedTrail = trails.find(t => t.name === trailName);
 
-        // Simple estimated time calculation (based on length and difficulty)
         let estimatedTime = hours;
         if (selectedTrail.difficulty === "Hard") estimatedTime += 2;
         if (selectedTrail.difficulty === "Moderate") estimatedTime += 1;
 
-        // Basic packing list
         let packingList = [
             "Water (at least 2 liters per person)",
             "Snacks / lunch",
@@ -148,11 +145,10 @@ function setupHikePlanner() {
         if (selectedTrail.difficulty === "Hard") {
             packingList.push("Headlamp or flashlight", "First aid kit", "Extra layers");
         }
-        if (groupSize >= 3) {
+        if (parseInt(groupSize) >= 3) {
             packingList.push("Group whistle", "Extra water");
         }
 
-        // Build the result HTML using template literals
         const resultHTML = `
             <h3>Your Hike Plan</h3>
             <p><strong>Trail:</strong> ${trailName}</p>
@@ -167,9 +163,7 @@ function setupHikePlanner() {
             <p><em>Always check current weather and trail conditions before hiking!</em></p>
         `;
 
-        // Display the result
-        const resultDiv = document.getElementById('result');
-        resultDiv.innerHTML = resultHTML;
+        document.getElementById('result').innerHTML = resultHTML;
 
         // Save to localStorage
         const planData = {
@@ -182,39 +176,25 @@ function setupHikePlanner() {
     });
 }
 
-// ==================== LOAD SAVED PLAN (optional bonus) ====================
-function loadSavedPlan() {
-    const savedPlan = localStorage.getItem('lastHikePlan');
-    if (savedPlan) {
-        const plan = JSON.parse(savedPlan);
-        console.log("Last saved plan:", plan);
-    }
+// ==================== SAFETY CHECKLIST ====================
+function setupSafetyChecklist() {
+    const checkAllBtn = document.getElementById('checkAllBtn');
+    if (!checkAllBtn) return;
+
+    checkAllBtn.addEventListener('click', () => {
+        const checkboxes = document.querySelectorAll('.safety-item');
+        checkboxes.forEach(box => box.checked = true);
+        
+        const message = document.getElementById('checklistMessage');
+        message.textContent = "✅ All safety items checked! You're ready to hike safely!";
+        message.style.color = "green";
+    });
 }
 
 // ==================== INITIALIZE EVERYTHING ====================
 document.addEventListener('DOMContentLoaded', () => {
-    // Display trails on home or trails page
     displayTrails(trails);
-
-    // Setup filters if on trails page
     setupFilters();
-
-    // Setup the hike planner form if on plan.html
     setupHikePlanner();
-
-    // Load any previously saved plan
-    loadSavedPlan();
+    setupSafetyChecklist();
 });
-
-// Safety Checklist on safety.html
-    const checkAllBtn = document.getElementById('checkAllBtn');
-    if (checkAllBtn) {
-        checkAllBtn.addEventListener('click', () => {
-            const checkboxes = document.querySelectorAll('.safety-item');
-            checkboxes.forEach(box => box.checked = true);
-            
-            const message = document.getElementById('checklistMessage');
-            message.textContent = "✅ All safety items checked! You're ready to hike safely!";
-            message.style.color = "green";
-        });
-    }
